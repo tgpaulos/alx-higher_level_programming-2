@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 
 if __name__ == "__main__":
     import sys
@@ -15,4 +17,3 @@ if __name__ == "__main__":
         print("arguments:", end="\n")
         for i, arg in enumerate(args):
             print(i + 1, ":", arg)
-
