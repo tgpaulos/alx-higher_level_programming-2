@@ -2,7 +2,9 @@
 
 import sys
 
+
 def print_arguments():
+
     count = len(sys.argv) - 1
 
     if count == 0:
@@ -14,6 +16,7 @@ def print_arguments():
 
     for i in range(count):
         print("{}: {}".format(i + 1, sys.argv[i + 1]))
+
 
 if __name__ == "__main__":
     print_arguments()
