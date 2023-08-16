@@ -1,19 +1,11 @@
-import dis
-
-def print_module_names():
-    with open("hidden_4.pyc", "rb") as file:
-        bytecode = file.read()
-        instructions = dis.get_instructions(bytecode)
-
-        names = set()
-        for instruction in instructions:
-            if instruction.opname == "LOAD_CONST":
-                const = instruction.argval
-                if isinstance(const, str) and not const.startswith("__"):
-                    names.add(const)
-
-        for name in sorted(names):
-            print(name)
+#!/usr/bin/python3
 
 if __name__ == "__main__":
-    print_module_names()
+    """Print all names defined by hidden_4 module."""
+    import hidden_4
+
+    names = dir(hidden_4)
+    for name in names:
+        if name[:2] != "__":
+            print(name)
+
